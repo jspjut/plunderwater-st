@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://csb8e73x7cvv5"]
+
+[ext_resource type="Texture2D" uid="uid://nkbi6bawfgof" path="res://assets/spike-enemy.png" id="1_f1tdk"]
+[ext_resource type="Script" path="res://src/spike_move.gd" id="1_f166k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk3ud"]
+size = Vector2(216, 208)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_f166k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(127, 127)
+scale = Vector2(0.492, 0.492)
+texture = ExtResource("1_f1tdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(136, 128)
+shape = SubResource("RectangleShape2D_mk3ud")

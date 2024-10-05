@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://pvnttvfa7lot"]
+
+[ext_resource type="Script" path="res://src/main_menu.gd" id="1_3i8uy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdhlq"]
+font_size = 50
+
+[node name="MainMenu (Control)" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3i8uy")
+
+[node name="Background (ColorRect)" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+color = Color(0.313726, 0.607843, 0.682353, 1)
+
+[node name="Title (Label)" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 37.0
+offset_right = 968.0
+offset_bottom = 190.0
+text = "Plunderwater: Sunken Treasures"
+label_settings = SubResource("LabelSettings_vdhlq")
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 248.0
+offset_right = 677.0
+offset_bottom = 332.0
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 355.0
+offset_right = 677.0
+offset_bottom = 420.0
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 447.0
+offset_right = 675.0
+offset_bottom = 525.0
+text = "Quit"

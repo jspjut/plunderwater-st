@@ -6,4 +6,4 @@ FOLDER_ID=1W30kKZFvQiYGSA0h4WxJkmRKkaxUCwhQ
 pip install gdown
 
 # Download the folder
-gdown https://drive.google.com/drive/folders/$FOLDER_ID -O .assets -- folder
+gdown https://drive.google.com/drive/folders/$FOLDER_ID -O .assets --folder

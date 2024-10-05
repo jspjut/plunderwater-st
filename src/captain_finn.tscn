@@ -1,20 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://dedn75sj1w3vu"]
 
-[ext_resource type="Texture2D" uid="uid://de3md7dg05kqb" path="res://assets/captain-finn.jpg" id="1_ve51w"]
 [ext_resource type="Script" path="res://src/captain_finn_move.gd" id="1_xho7w"]
+[ext_resource type="Texture2D" uid="uid://dls4xheuwlpm6" path="res://assets/captain-finn.png" id="2_3hh0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu2y5"]
 size = Vector2(87, 83)
 
-[node name="Captain Finn" type="Node2D"]
+[node name="Captain Finn" type="Node2D" groups=["player"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_xho7w")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(56, 63)
-scale = Vector2(0.069397, 0.0746772)
-texture = ExtResource("1_ve51w")
+position = Vector2(61, 71)
+scale = Vector2(0.238698, 0.25686)
+texture = ExtResource("2_3hh0o")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(61, 77)

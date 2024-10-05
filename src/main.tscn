@@ -11,8 +11,8 @@ script = ExtResource("1_oh66p")
 [node name="Captain Finn" parent="." instance=ExtResource("2_5s256")]
 position = Vector2(500, 255)
 
-[node name="Node2D" parent="." instance=ExtResource("3_c40mi")]
+[node name="Treasure" parent="." instance=ExtResource("3_c40mi")]
 position = Vector2(188, 429)
 
-[node name="Node2D2" parent="." instance=ExtResource("4_3f3wm")]
+[node name="Spike" parent="." instance=ExtResource("4_3f3wm")]
 position = Vector2(159, 105)

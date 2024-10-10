@@ -1,18 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpnpidfruwc4i"]
+[gd_scene load_steps=2 format=3 uid="uid://bpnpidfruwc4i"]
 
-[ext_resource type="Script" path="res://src/main_logic.gd" id="1_oh66p"]
-[ext_resource type="PackedScene" uid="uid://dedn75sj1w3vu" path="res://src/captain_finn.tscn" id="2_5s256"]
-[ext_resource type="PackedScene" uid="uid://dwljcbp7f0km7" path="res://src/treasure.tscn" id="3_c40mi"]
-[ext_resource type="PackedScene" uid="uid://csb8e73x7cvv5" path="res://src/spike.tscn" id="4_3f3wm"]
+[ext_resource type="Script" path="res://src/main_level_generation.gd" id="1_cmg0a"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_oh66p")
-
-[node name="Captain Finn" parent="." instance=ExtResource("2_5s256")]
-position = Vector2(500, 255)
-
-[node name="Treasure" parent="." instance=ExtResource("3_c40mi")]
-position = Vector2(188, 429)
-
-[node name="Spike" parent="." instance=ExtResource("4_3f3wm")]
-position = Vector2(159, 105)
+script = ExtResource("1_cmg0a")

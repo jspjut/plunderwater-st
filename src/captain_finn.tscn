@@ -1,22 +1,133 @@
-[gd_scene load_steps=4 format=3 uid="uid://dedn75sj1w3vu"]
+[gd_scene load_steps=19 format=3 uid="uid://dedn75sj1w3vu"]
 
 [ext_resource type="Script" path="res://src/captain_finn_move.gd" id="1_xho7w"]
-[ext_resource type="Texture2D" uid="uid://dls4xheuwlpm6" path="res://assets/captain-finn.png" id="2_3hh0o"]
+[ext_resource type="Texture2D" uid="uid://bj6xeppx4tahw" path="res://assets/images/captain_finn/captain-finn-swim2.png" id="2_tmxap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu2y5"]
 size = Vector2(87, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n5q3"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(0, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syty6"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(110, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oojt8"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(220, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhbpi"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(330, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k70ms"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(440, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oktk"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(550, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q4en"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(0, 0, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46pa5"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(0, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djdvr"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(110, 0, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgqkn"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(110, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4l71"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(440, 0, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbghd"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(440, 125, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iihak"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(550, 0, 110, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slcq0"]
+atlas = ExtResource("2_tmxap")
+region = Rect2(550, 125, 110, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80j4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n5q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syty6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oojt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhbpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k70ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oktk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q4en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46pa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djdvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgqkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4l71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iihak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slcq0")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 9.0
+}]
 
 [node name="Captain Finn" type="Node2D" groups=["player"]]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_xho7w")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(61, 71)
-scale = Vector2(0.238698, 0.25686)
-texture = ExtResource("2_3hh0o")
-flip_h = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(61, 77)
 shape = SubResource("RectangleShape2D_iu2y5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(59, 66)
+sprite_frames = SubResource("SpriteFrames_80j4t")
+animation = &"swim"
+frame_progress = 0.601495

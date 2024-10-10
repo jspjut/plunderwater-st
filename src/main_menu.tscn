@@ -42,6 +42,7 @@ offset_bottom = 332.0
 text = "New Game"
 
 [node name="OptionsButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 477.0
 offset_top = 355.0
 offset_right = 677.0
@@ -49,6 +50,7 @@ offset_bottom = 420.0
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 482.0
 offset_top = 447.0
 offset_right = 675.0

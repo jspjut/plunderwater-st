@@ -130,4 +130,4 @@ shape = SubResource("RectangleShape2D_iu2y5")
 position = Vector2(59, 66)
 sprite_frames = SubResource("SpriteFrames_80j4t")
 animation = &"swim"
-frame_progress = 0.601495
+frame_progress = 0.103364

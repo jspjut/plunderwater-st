@@ -6,6 +6,13 @@ var level_height = 5000
 var num_treasures = 100
 var num_spikes = 50
 
+@onready var tile_map_layer = $TileMapLayer
+@onready var tile_set = tile_map_layer.tile_set
+
+var tile_size: Vector2i
+var tiles_wide: int
+var tiles_high: int
+
 var score = 0
 
 var treasure_scene = preload("res://src/treasure.tscn")
@@ -50,6 +57,33 @@ func generate_level():
 	end_point.position = end_position
 	add_child(end_point)
 	
+	# Populate the tileMap
+	fill_tile_map_layer()
+	
+func fill_tile_map_layer():
+	var source_id = 0  # Assume the first source has ID 0
+	var source = tile_set.get_source(source_id)
+	
+	#Not sure why this seems to take forever to run...
+	#if source is TileSetAtlasSource:
+		#var atlas_source = source as TileSetAtlasSource
+		#for y in range(tiles_high):
+			#for x in range(tiles_wide):
+				#var random_coords = get_random_tile_coords(atlas_source)
+				#if random_coords != Vector2i(-1, -1):
+					#tile_map_layer.set_cell(Vector2i(x, y), source_id, random_coords)
+
+func get_random_tile_coords(atlas_source: TileSetAtlasSource) -> Vector2i:
+	var valid_coords = []
+	for x in range(atlas_source.get_atlas_grid_size().x):
+		for y in range(atlas_source.get_atlas_grid_size().y):
+			if atlas_source.get_tile_at_coords(Vector2i(x, y)):
+				valid_coords.append(Vector2i(x, y))
+	
+	if valid_coords.size() > 0:
+		return valid_coords[randi() % valid_coords.size()]
+	return Vector2i(-1, -1)  # Return invalid coords if no tiles found
+	
 func setup_camera(player):
 	var camera = Camera2D.new()
 	camera.make_current()
@@ -58,6 +92,9 @@ func setup_camera(player):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	tile_size = tile_set.tile_size
+	tiles_wide = level_width / tile_size.x
+	tiles_high = level_height / tile_size.y
 	generate_level()
 	var player = get_node("Captain Finn/CharacterBody2D")  # Adjust the path as needed
 	setup_camera(player)
